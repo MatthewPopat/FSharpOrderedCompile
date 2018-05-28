@@ -5,6 +5,8 @@ F# files before they are compiled, removing the need to manually include
 every file for compilation. It works by detecting dependencies between F# files
 then topologically sorting the dependency graph.
 
+[![Build status](https://ci.appveyor.com/api/projects/status/a4kbwgyhgoew5c0f/branch/master?svg=true)](https://ci.appveyor.com/project/MatthewPopat/fsharporderedcompile/branch/master)
+
 ## Installation
 
 Simply add the nuget package
