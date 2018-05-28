@@ -7,7 +7,9 @@ then topologically sorting the dependency graph.
 
 ## Installation
 
-Simply add the nuget package FSharpOrderedCompile to your project and remove all
+Simply add the nuget package
+[FSharpOrderedCompile](https://www.nuget.org/packages/FSharpOrderedCompile/)
+to your project and remove all
 ```xml
     <ItemGroup>
         <Compile Include="filename.fs" />
