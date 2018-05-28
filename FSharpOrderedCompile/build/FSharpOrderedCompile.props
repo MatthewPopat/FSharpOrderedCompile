@@ -1,0 +1,3 @@
+<Project>
+  <UsingTask TaskName="FSharpOrderedCompile.FSharpOrderedCompile" AssemblyFile="$(MSBuildThisFileDirectory)..\tasks\netstandard2.0\FSharpOrderedCompile.dll" />
+</Project>

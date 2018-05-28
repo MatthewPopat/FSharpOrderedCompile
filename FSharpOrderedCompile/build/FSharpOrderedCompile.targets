@@ -1,0 +1,17 @@
+<Project>
+  <Target Name="Prepare" BeforeTargets="CoreCompile">
+    <ItemGroup>
+      <Compile Include="**/*.fs" />
+    </ItemGroup>
+
+    <FSharpOrderedCompile Files="@(Compile)">
+      <Output TaskParameter="ToCompile" ItemName="_OrderedCompile" />
+    </FSharpOrderedCompile>
+
+    <ItemGroup>
+      <Compile Remove="@(_OrderedCompile)" />
+      <Compile Include="@(_OrderedCompile)" />
+      <_OrderedCompile Remove="@(_OrderedCompile)" />
+    </ItemGroup>
+  </Target>
+</Project>

@@ -1,0 +1,10 @@
+image: Visual Studio 2017
+build_script:
+- ps: Update-AppveyorBuild -Version "$(Get-Content .\semver.txt -Raw)-$($env:APPVEYOR_BUILD_NUMBER)"
+- ps: dotnet clean -c Release
+- ps: dotnet build /p:Version=$(Get-Content .\semver.txt -Raw) -c Release
+- ps: dotnet test AutoOrderedCompile.Tests\AutoOrderedCompile.Tests.fsproj --no-build --no-restore -c Release
+- ps: dotnet pack AutoOrderedCompile\AutoOrderedCompile.fsproj  /p:PackageVersion=$(Get-Content .\semver.txt -Raw) --no-build --no-restore -o ..\artifacts -c Release
+test: off
+artifacts:
+  - path: 'artifacts\**\*.nupkg'
